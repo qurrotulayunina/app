@@ -1,0 +1,47 @@
+<ng-container>
+    <!--toolbar-->
+        <mat-toolbar color="primary" class="example-header">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>Moswear.id</span>
+            <div class="uk-width-expand"></div>
+            <small>Admin</small>
+        </mat-toolbar>
+    <!--end toolbar-->
+    
+    <mat-sidenav-container class="admin-container">
+        <mat-sidenav 
+        #sidenav mode="side" 
+        [position]="'start'" 
+        [opened]="false"
+        opened class="sidenav-left"
+        [fixedInViewport]="true" 
+        [fixedTopGap]="64"
+        [fixedBottomGap]="0">
+    
+            <mat-nav-list>
+                <mat-list-item routerLink="/admin/dashboard">
+                    <mat-icon matListIcon>dashboard</mat-icon>
+                    <h3 matLine>Dashboard</h3>
+                </mat-list-item>    
+            </mat-nav-list>
+    
+    </mat-sidenav>
+    
+    <mat-sidenav #sidenav mode="side" 
+    [position]="'end'"  
+    class="example-sidenav"
+    [fixedInViewport]="true" 
+    [fixedTopGap]="64"
+    [fixedBottomGap]="0">
+
+    </mat-sidenav>
+    <mat-sidenav-content style="background-color: #fce4ec;">
+    <!--halaman-halaman tampil disini-->
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    <!--end sidenav content-->
+    </mat-sidenav-container>   
+</ng-container>
+    
