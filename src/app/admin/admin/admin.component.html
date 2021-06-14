@@ -24,7 +24,11 @@
                 <mat-list-item routerLink="/admin/dashboard">
                     <mat-icon matListIcon>dashboard</mat-icon>
                     <h3 matLine>Dashboard</h3>
-                </mat-list-item>    
+                </mat-list-item> 
+                <mat-list-item routerLink="/admin/product">
+                    <mat-icon matListIcon>local_mall</mat-icon>
+                    <h3 matLine>Products</h3>
+                    </mat-list-item>   
             </mat-nav-list>
     
     </mat-sidenav>
@@ -37,7 +41,7 @@
     [fixedBottomGap]="0">
 
     </mat-sidenav>
-    <mat-sidenav-content style="background-color: #fce4ec;">
+    <mat-sidenav-content style="padding: 20px; background-color: #fce4ec;">
     <!--halaman-halaman tampil disini-->
         <router-outlet></router-outlet>
     </mat-sidenav-content>
