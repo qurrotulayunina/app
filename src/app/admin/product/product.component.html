@@ -1,5 +1,35 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Produk</mat-card-title>
+        <mat-card-title>{{title}}</mat-card-title>
     </mat-card-header>
+    <mat-card-content>
+        <div class="uk-flex">
+            <span class="uk-width-expand"></span>
+            <button mat-flat-button color="primary">Tambah Produk</button>
+        </div>
+        <table class="uk-table uk-table-middle uk-table-divider">
+            <thead>                
+                <th>No</th>
+                <th>Nama Produk</th>
+                <th>Ukuran</th>
+                <th>Warna</th>
+                <th>Stok</th>
+                <th>Harga</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let idx=index">
+                    <td>{{idx+1}}</td>
+                    <td>{{product.nama}}</td>
+                    <td>{{product.ukuran}}</td>
+                    <td>{{product.warna}}</td>
+                    <td>{{product.stok}}</td>
+                    <td>{{product.harga}}</td>
+                    <td align="right">
+                        <button mat-button color="primary" >Edit</button>
+                        <button mat-button color="warn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card-content>
  </mat-card>

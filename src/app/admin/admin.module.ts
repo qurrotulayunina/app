@@ -19,6 +19,11 @@ const routes: Routes = [
         path:'product',
         component:ProductComponent
       },
+      {
+        path:'',
+        pathMatch:'full',
+        redirectTo:'/admin/dashboard'
+      }
     ]
   }
 ]
