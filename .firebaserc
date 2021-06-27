@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "produk-8700e": {
+      "hosting": {
+        "project": [
+          "produk-8700e"
+        ]
+      }
+    }
+  }
+}
