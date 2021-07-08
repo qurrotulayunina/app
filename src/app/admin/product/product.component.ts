@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ApiService } from 'src/app/services/api.service';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-product',
@@ -12,40 +13,37 @@ export class ProductComponent implements OnInit {
   title:any;
   product:any={};
   products:any=[];
+  userData:any = {};
 
   constructor(
     public dialog:MatDialog,
-    public api:ApiService
-  ) {
-    this.title='Produk';
-    this.getProducts();
-   }
+    public db: AngularFirestore,
+    public auth: AngularFireAuth
+  ) {}
 
   ngOnInit(): void {
+    this.title='Product';
+    this.auth.user.subscribe(user=>{
+      this.userData = user;
+      console.log(this.userData);
+      this.getProducts();
+    })
   }
   loading:boolean | undefined;
   getProducts()
   {
-    this.api.get('products').subscribe(result=>{
-      this.products=result;
+    this.loading=true;
+    this.db.collection('products', ref=>{
+      return ref.where('uid','==',this.userData.uid);
+    }).valueChanges({idField : 'id'}).subscribe(res=>{
+      console.log(res);
+      this.products=res;
+      this.loading=false;
+    }, err=>{
+      this.loading=false;
     })
-    //this.products=[
-      //{
-       //nama:'Gamis',
-        //ukuran:'XL',
-        //warna:'all available',
-        //stok:20,
-       // harga:100000
-     // },
-     // {
-        //nama:'Mukena',
-       // ukuran:'XL',
-        //warna:'all available',
-        //stok:20,
-        //harga:150000
-      //}
-    //];
   }
+
   productDetail(data:any,idx:any)
   {
    let dialog=this.dialog.open(ProductDetailComponent, {
@@ -53,25 +51,24 @@ export class ProductComponent implements OnInit {
      data:data
    });
    dialog.afterClosed().subscribe(res=>{
-     if(res)
-     {
-       if(idx==-1)this.products.push(res);      
-       else this.products[idx]=res; 
-     }
-   })
+     return;
+   });
   }
 
   loadingDelete:any={};
- deleteProduct(idx:any)
+  deleteProducts(id: any,idx: any)
   {
-   var conf=confirm('Delete item?');
-   if(conf)
-   {
-    this.api.delete('products/'+this.products[idx].id).subscribe(result=>{
-      this.products.splice(idx,1);
-    },error=>{
-      alert('Tidak dapat menghapus data');
-    });
+    var conf=confirm('Delete item?');
+    if(conf)
+    {
+      this.db.collection('products').doc(id).delete().then(result=>{
+        this.products.splice(idx,1);
+        this.loadingDelete[idx]=false;
+      }).catch(error=>{
+        this.loadingDelete[idx]=false;
+        alert('Tidak dapat menghapus data');
+      });
+    }
   }
 
-}}
+}
