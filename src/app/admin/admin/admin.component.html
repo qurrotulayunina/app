@@ -4,19 +4,20 @@
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Moswear.id</span>
+            <span>Moswear.id</span> 
             <div class="uk-width-expand">
             </div>
             <button mat-button [matMenuTriggerFor]="menu">
-                <mat-icon>account_circle</mat-icon>
+                <mat-icon>notifications</mat-icon>
+            </button>
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>settings</mat-icon>
             </button>
             <mat-menu #menu=matMenu>
                 <button mat-menu-item (click)="logout()">
                     <mat-icon>exit_to_app</mat-icon>Log Out
                 </button>
-            </mat-menu>
-            
-            
+            </mat-menu>    
         </mat-toolbar>
     <!--end toolbar-->
     
@@ -30,15 +31,25 @@
         [fixedTopGap]="64"
         [fixedBottomGap]="0">
     
-            <mat-nav-list>
+
+            <mat-nav-list> 
                 <mat-list-item routerLink="/admin/dashboard">
-                    <mat-icon matListIcon>dashboard</mat-icon>
-                    <h3 matLine>Dashboard</h3>
+                    <mat-icon matListIcon>home</mat-icon>
+                    <h3 matLine>Home</h3>
                 </mat-list-item> 
                 <mat-list-item routerLink="/admin/product">
-                    <mat-icon matListIcon>local_mall</mat-icon>
-                    <h3 matLine>Products</h3>
-                </mat-list-item>   
+                    <mat-icon matListIcon>local_grocery_store</mat-icon>
+                    <h3 matLine>Produk</h3>
+                </mat-list-item>
+                <mat-list-item routerLink="/admin/transaction">
+                    <mat-icon matListIcon>receipt</mat-icon>
+                    <h3 matLine>Transaksi</h3>
+                </mat-list-item>
+                <mat-list-item routerLink="/admin/message">
+                    <mat-icon matListIcon>forum</mat-icon>
+                    <h3 matLine>Pesan</h3>
+                </mat-list-item>
+                  
             </mat-nav-list>
     
     </mat-sidenav>

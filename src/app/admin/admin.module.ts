@@ -12,6 +12,8 @@ import { CardComponent } from './dashboard/widget/card/card.component';
 import { AreaComponent } from './dashboard/widget/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartComponent } from './dashboard/widget/chart/chart.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
       {
         path:'product',
         component:ProductComponent
+      },
+      {
+        path:'transaction',
+        component:TransactionComponent
+      },
+      {
+        path:'message',
+        component:MessageComponent
       },
       {
         path:'',
@@ -44,6 +54,8 @@ const routes: Routes = [
     CardComponent,
     AreaComponent,
     ChartComponent,
+    TransactionComponent,
+    MessageComponent,
 
   ],
   imports: [

@@ -10,6 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+
   title:any;
   product:any={};
   products:any=[];
@@ -22,7 +23,7 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.title='Product';
+    this.title='Produk';
     this.auth.user.subscribe(user=>{
       this.userData = user;
       console.log(this.userData);
@@ -52,11 +53,11 @@ export class ProductComponent implements OnInit {
    });
    dialog.afterClosed().subscribe(res=>{
      return;
-   });
+   })
   }
 
   loadingDelete:any={};
-  deleteProducts(id: any,idx: any)
+  deleteProduct(id: any,idx: any)
   {
     var conf=confirm('Delete item?');
     if(conf)
