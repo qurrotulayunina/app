@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-transaction',
-  templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.scss']
+  selector: 'app-review',
+  templateUrl: './review.component.html',
+  styleUrls: ['./review.component.scss']
 })
-export class TransactionComponent implements OnInit {
+export class ReviewComponent implements OnInit {
 
   title : any;
 
@@ -15,7 +15,7 @@ export class TransactionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.title='Transaksi'
+    this.title='Ulasan'
   }
 
 }

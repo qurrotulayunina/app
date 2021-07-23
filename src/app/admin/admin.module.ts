@@ -14,6 +14,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartComponent } from './dashboard/widget/chart/chart.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { MessageComponent } from './message/message.component';
+import { ReviewComponent } from './review/review.component';
+import { GraphComponent } from './graph/graph.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
         component:MessageComponent
       },
       {
+        path:'review',
+        component:ReviewComponent
+      },
+      {
+        path:'graph',
+        component:GraphComponent
+      },
+      {
         path:'',
         pathMatch:'full',
         redirectTo:'/admin/dashboard'
@@ -56,6 +66,8 @@ const routes: Routes = [
     ChartComponent,
     TransactionComponent,
     MessageComponent,
+    ReviewComponent,
+    GraphComponent,
 
   ],
   imports: [

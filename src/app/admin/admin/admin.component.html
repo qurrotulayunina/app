@@ -4,12 +4,16 @@
             <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Moswear.id</span> 
+            <span>Moswear.Id</span> 
             <div class="uk-width-expand">
             </div>
-            <button mat-button [matMenuTriggerFor]="menu">
-                <mat-icon>notifications</mat-icon>
+            <button mat-button [matMenuTriggerFor]="beforeMenu">
+                <mat-icon matBadge="12" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()" matBadgeColor="accent">notifications</mat-icon>
             </button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                
+            </mat-menu>
+           
             <button mat-button [matMenuTriggerFor]="menu">
                 <mat-icon>settings</mat-icon>
             </button>
@@ -45,9 +49,17 @@
                     <mat-icon matListIcon>receipt</mat-icon>
                     <h3 matLine>Transaksi</h3>
                 </mat-list-item>
+                <mat-list-item routerLink="/admin/graph">
+                    <mat-icon matListIcon>timeline</mat-icon>
+                    <h3 matLine>Grafik</h3>
+                </mat-list-item>
                 <mat-list-item routerLink="/admin/message">
                     <mat-icon matListIcon>forum</mat-icon>
                     <h3 matLine>Pesan</h3>
+                </mat-list-item>
+                <mat-list-item routerLink="/admin/review">
+                    <mat-icon matListIcon>rate_review</mat-icon>
+                    <h3 matLine>Ulasan</h3>
                 </mat-list-item>
                   
             </mat-nav-list>

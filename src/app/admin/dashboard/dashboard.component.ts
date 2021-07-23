@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  title: any;
   constructor() { }
 
   ngOnInit(): void {
+    this.title='Home'
   }
 
 }

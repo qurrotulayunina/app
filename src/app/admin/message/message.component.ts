@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
 })
 export class MessageComponent implements OnInit {
 
+  title:any; 
   constructor(
     public router: Router
   ) { }
 
   ngOnInit(): void {
+    this.title='Pesan'
   }
 
 }
