@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.loading=true;
     this.auth.signInWithEmailAndPassword(user.email, user.password).then(res=>{
       this.loading=false;
-      this.router.navigate(['admin/dashboard']);
+      this.router.navigate(['admin/home']);
     }).catch(err=>{
       this.loading=false;
       alert('Tidak dapat login');

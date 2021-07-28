@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
 
   logout()
   {
-    let conf=confirm('Keluar aplikasi ?');
+    let conf=confirm('Yakin ingin keluar aplikasi ?');
     if(conf)
     {
       localStorage.removeItem('appToken');

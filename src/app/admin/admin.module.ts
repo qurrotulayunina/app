@@ -17,13 +17,14 @@ import { MessageComponent } from './message/message.component';
 import { ReviewComponent } from './review/review.component';
 import { GraphComponent } from './graph/graph.component';
 
+
 const routes: Routes = [
   {
     path:'',
     component: AdminComponent,
     children:[
       {
-        path:'dashboard',
+        path:'home',
         component: DashboardComponent
       },
       {

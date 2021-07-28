@@ -8,10 +8,14 @@
             <div class="uk-width-expand">
             </div>
             <button mat-button [matMenuTriggerFor]="beforeMenu">
-                <mat-icon matBadge="12" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()" matBadgeColor="accent">notifications</mat-icon>
+                <mat-icon matBadge="5" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()" matBadgeColor="accent">notifications</mat-icon>
             </button>
             <mat-menu #beforeMenu="matMenu" xPosition="before">
-                
+                <button style="font-size: 11px;" routerLink="/admin/message" mat-menu-item>Wah, belum ada yang menghubungimu..</button>
+                <button style="font-size: 11px;" routerLink="/admin/review" mat-menu-item>Kamu memiliki 3 penilaian baru !</button>
+                <button style="font-size: 11px;" routerLink="/admin/product" mat-menu-item>Stock Rowena Dress menipis, segera restock !!</button>
+                <button style="font-size: 11px;" routerLink="/admin/transaction" mat-menu-item>Ada pesanan baru, segera kirim</button>
+                <button style="font-size: 11px;" routerLink="/admin/home" mat-menu-item>Rekor baru, penghasilanmu meningkat drastis</button>
             </mat-menu>
            
             <button mat-button [matMenuTriggerFor]="menu">
@@ -37,7 +41,7 @@
     
 
             <mat-nav-list> 
-                <mat-list-item routerLink="/admin/dashboard">
+                <mat-list-item routerLink="/admin/home">
                     <mat-icon matListIcon>home</mat-icon>
                     <h3 matLine>Home</h3>
                 </mat-list-item> 
@@ -74,7 +78,7 @@
     [fixedBottomGap]="0">
 
     </mat-sidenav>
-    <mat-sidenav-content style="padding: 20px; background-color: #fce4ec;">
+    <mat-sidenav-content style="padding: 20px; background-color: #ECEFF1;">
     <!--halaman-halaman tampil disini-->
         <router-outlet></router-outlet>
     </mat-sidenav-content>

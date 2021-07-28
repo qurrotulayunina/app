@@ -1,8 +1,8 @@
 
 <div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport" style="background-image: url('assets/wp_1.jpg') ; background-size: cover; background-position: center;">  
-  <mat-card class="uk-width-1-3@m">
+  <mat-card style="background-color: #ECEFF1;" class="uk-width-1-3@m">
       <div class="uk-flex uk-flex-center uk-margin-medium-bottom">
-          <h3>Register</h3>
+          <h3>DAFTAR</h3>
       </div>
     <mat-card-content>
       <mat-form-field class="uk-width-1-1" appearance="outline">
@@ -18,10 +18,10 @@
         </mat-form-field>
         <div class="uk-flex uk-flex-right">
             <div class="uk-width-expand">
-              <button mat-button routerLink="/login">I have an account</button>
-              <button mat-button routerLink="/forgot">Forgot</button>
+              <button mat-button routerLink="/login">Sudah punya Akun</button>
+              <button mat-button routerLink="/forgot">Lupa</button>
             </div>
-            <button mat-raised-button color="primary" (click)="register(user)" [disabled]="loading">{{loading ? 'TUNGGU..':'REGISTER'}}</button>
+            <button mat-raised-button color="primary" (click)="register(user)" [disabled]="loading">{{loading ? 'TUNGGU..':'DAFTAR'}}</button>
         </div>
     </mat-card-content>
   </mat-card>
