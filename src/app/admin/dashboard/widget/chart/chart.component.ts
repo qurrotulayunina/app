@@ -21,7 +21,7 @@ export class ChartComponent implements OnInit {
     },
 
     subtitle: {
-        text: 'Moswear.Id'
+        text: 'ManageLy'
     },
 
     yAxis: {
