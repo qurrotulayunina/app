@@ -59,7 +59,7 @@ export class ChartComponent implements OnInit {
         data: [29742, 29851, 32490, 30282, 38121, 40434, 54300, 32000]
     }, {
         name: 'Pengembalian',
-        data: [16005, 19771, 20000, 19800, 20185, 24377, 32147, 39387]
+        data: [0, 0, 0, 0, 0, 0, 0, 0]
     }],
 
     responsive: {

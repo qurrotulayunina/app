@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.auth.createUserWithEmailAndPassword(user.email, user.password).then(res=>{
       this.loading=false;
       alert('Registrasi berhasil');
-      this.router.navigate(['auth/login']);
+      this.router.navigate(['/login']);
     }).catch(err=>{
       this.loading=false;
       alert('Ada masalah..')
